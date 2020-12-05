@@ -1,0 +1,38 @@
+package Model;
+
+public class CoinList
+{
+    private String id;
+    private String symbol;
+    private String name;
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public String getSymbol()
+    {
+        return symbol;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setId(String id)
+    {
+        this.id = id;
+    }
+
+    public void setSymbol(String symbol)
+    {
+        this.symbol = symbol;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+}
