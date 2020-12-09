@@ -14,8 +14,8 @@ public class Main extends Application
     public static void main(String[] args)
     {
 
-        GeckoUtils.getAllCoins();
-//        launch(args);
+//        GeckoUtils.getAllCoins();
+        launch(args);
     }
 
     @Override

@@ -8,7 +8,6 @@ import java.net.http.HttpResponse;
 
 public class HttpUtils
 {
-
     public static String fetchData(String uri)
     {
         HttpClient client = HttpClient.newHttpClient();
