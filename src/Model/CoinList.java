@@ -6,6 +6,13 @@ public class CoinList
     private String symbol;
     private String name;
 
+    public CoinList(String id, String symbol, String name)
+    {
+        this.id = id;
+        this.symbol = symbol;
+        this.name = name;
+    }
+
     public String getId()
     {
         return id;
