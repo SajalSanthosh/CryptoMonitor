@@ -1,6 +1,7 @@
 package Utils;
 
 import Model.CoinList;
+import Model.CoinMarketChart;
 import Model.CoinMarketData;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -49,23 +50,20 @@ public class GeckoUtils
     }
 
 
-    public static CoinMarketData getCoinMarketChart(String coinId)
+    public static CoinMarketChart getCoinMarketChart(String coinId)
     {
-        CoinMarketData coinMarketData = null;
+        CoinMarketChart coinMarketChart = null;
         String apiResponse = HttpUtils.fetchData("https://api.coingecko.com/api/v3/coins/" + coinId + "/market_chart?vs_currency=usd&days=30&interval=daily");
 
         try (JsonReader jsonReader = new JsonReader(new StringReader(apiResponse));)
         {
             Gson gson = new Gson();
-            coinMarketData = gson.fromJson(jsonReader, CoinMarketData.class);
+            coinMarketChart = gson.fromJson(jsonReader, CoinMarketChart.class);
             System.out.println();
         } catch (Exception e)
         {
             e.printStackTrace();
         }
-
-        //
-
-        return coinMarketData;
+        return coinMarketChart;
     }
 }

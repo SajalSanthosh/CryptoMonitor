@@ -14,7 +14,7 @@ public class Main extends Application
     public static void main(String[] args)
     {
 
-//        GeckoUtils.getCoinMarketData("bitcoin");
+//        GeckoUtils.getCoinMarketChart("bitcoin");
         launch(args);
     }
 

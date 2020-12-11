@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="484.0" prefWidth="899.0" style="-fx-background-color: #2E3880;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+<AnchorPane prefHeight="541.0" prefWidth="931.0" style="-fx-background-color: #2E3880;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
    <children>
       <Label alignment="CENTER" layoutX="335.0" layoutY="14.0" prefHeight="34.0" prefWidth="214.0" text="Crypto Monitor" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -18,10 +21,10 @@
       <HBox alignment="CENTER" layoutX="20.0" layoutY="59.0" prefHeight="34.0" prefWidth="858.0">
          <children>
             <Label prefHeight="35.0" prefWidth="231.0" text="Please select your Crypto Currency : " textFill="WHITE" />
-            <ComboBox fx:id="cryptoList" onAction="#onCoinListSelected" prefHeight="26.0" prefWidth="213.0" promptText="Select" />
+            <ComboBox fx:id="cryptoList" onAction="#onCoinListSelected" prefHeight="26.0" prefWidth="213.0" promptText="Bitcoin" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="258.0" layoutY="138.0" prefHeight="46.0" prefWidth="367.0">
+      <HBox alignment="CENTER" layoutX="281.0" layoutY="140.0" prefHeight="46.0" prefWidth="367.0">
          <children>
             <Label fx:id="cryptoPrice" alignment="CENTER" prefHeight="46.0" prefWidth="228.0" text="18125.860" textAlignment="CENTER" textFill="#cccccc">
                <font>
@@ -31,18 +34,26 @@
             <Label fx:id="cryptoPriceUnit" alignment="CENTER" prefHeight="19.0" prefWidth="83.0" style="-fx-translate-y: -10px;" text="USD/BTC" textFill="WHITE" />
          </children>
       </HBox>
-      <ImageView fx:id="footerImg" fitHeight="155.0" fitWidth="899.0" layoutX="-4.0" layoutY="329.0" pickOnBounds="true">
+      <ImageView fx:id="footerImg" fitHeight="78.0" fitWidth="931.0" layoutY="463.0" pickOnBounds="true">
          <image>
             <Image url="@../graph-dark.png" />
          </image>
       </ImageView>
-      <Label fx:id="cryptoHigh24" layoutX="153.0" layoutY="109.0" prefHeight="18.0" prefWidth="155.0" text="High : 18217.210" textFill="WHITE" />
-      <Label fx:id="cryptoLow24" layoutX="635.0" layoutY="109.0" prefHeight="19.0" prefWidth="155.0" text="Low: 17873.070" textFill="WHITE" />
-      <HBox alignment="CENTER" layoutX="360.0" layoutY="105.0" prefHeight="26.0" prefWidth="163.0">
+      <Label fx:id="cryptoHigh24" layoutX="156.0" layoutY="108.0" prefHeight="18.0" prefWidth="155.0" text="High : 18217.210" textFill="WHITE" />
+      <Label fx:id="cryptoLow24" layoutX="649.0" layoutY="108.0" prefHeight="19.0" prefWidth="155.0" text="Low: 17873.070" textFill="WHITE" />
+      <HBox alignment="CENTER" layoutX="384.0" layoutY="105.0" prefHeight="26.0" prefWidth="163.0">
          <children>
             <Label text="Change: " textFill="WHITE" />
             <Label fx:id="cryptoChange24" alignment="CENTER" prefHeight="18.0" prefWidth="69.0" text="-0.97 %" textAlignment="CENTER" textFill="RED" />
          </children>
       </HBox>
+      <AreaChart fx:id="lineGraph" layoutX="15.0" layoutY="187.0" prefHeight="278.0" prefWidth="908.0">
+         <xAxis>
+            <CategoryAxis fx:id="categoryAxis" side="BOTTOM" styleClass="graph-label" tickLabelFill="WHITE" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="numberAxis" side="LEFT" styleClass="graph-label" tickLabelFill="WHITE" />
+         </yAxis>
+      </AreaChart>
    </children>
 </AnchorPane>
