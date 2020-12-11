@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="541.0" prefWidth="931.0" style="-fx-background-color: #2E3880;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+<AnchorPane prefHeight="541.0" prefWidth="931.0" styleClass="pane" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
    <children>
       <Label alignment="CENTER" layoutX="335.0" layoutY="14.0" prefHeight="34.0" prefWidth="214.0" text="Crypto Monitor" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -21,12 +21,12 @@
       <HBox alignment="CENTER" layoutX="20.0" layoutY="59.0" prefHeight="34.0" prefWidth="858.0">
          <children>
             <Label prefHeight="35.0" prefWidth="231.0" text="Please select your Crypto Currency : " textFill="WHITE" />
-            <ComboBox fx:id="cryptoList" onAction="#onCoinListSelected" prefHeight="26.0" prefWidth="213.0" promptText="Bitcoin" />
+            <ComboBox fx:id="cryptoList" onAction="#onCoinListSelected" prefHeight="26.0" prefWidth="213.0" promptText="Bitcoin" styleClass="cryptoSelect" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="281.0" layoutY="140.0" prefHeight="46.0" prefWidth="367.0">
          <children>
-            <Label fx:id="cryptoPrice" alignment="CENTER" prefHeight="46.0" prefWidth="228.0" text="18125.860" textAlignment="CENTER" textFill="#cccccc">
+            <Label fx:id="cryptoPrice" alignment="CENTER" prefHeight="46.0" prefWidth="228.0" styleClass="cryptoPrice" text="18125.860" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Tahoma Bold" size="26.0" />
                </font>
